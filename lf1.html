@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>作業1: 等第轉換 (ABCD)</title>
+</head>
+<body>
+    <script>
+        // 定義一個函式用於分數轉換為等第
+        function convertGrade(score) {
+            if (score >= 85 && score <= 100) {
+                return "A";
+            } else if (score >= 70 && score <= 84) {
+                return "B";
+            } else if (score >= 60 && score <= 69) {
+                return "C";
+            } else if (score >= 1 && score <= 59) {
+                return "D";
+            } else {
+                return "無效分數！";
+            }
+        }
+
+        // 要求使用者輸入分數
+        let score = prompt("請輸入百分制分數 (0~100)", "");
+        if (score !== null && score !== "") { // 確保輸入有效
+            score = parseInt(score);
+            if (!isNaN(score)) {
+                let grade = convertGrade(score); // 呼叫函式進行轉換
+                document.write(`<h3>輸入分數: ${score}</h3>`);
+                document.write(`<h3>對應等第: ${grade}</h3>`);
+            } else {
+                document.write("<h3>請輸入有效的數字！</h3>");
+            }
+        } else {
+            document.write("<h3>未輸入分數！</h3>");
+        }
+    </script>
+</body>
+</html>

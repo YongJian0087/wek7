@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>作業2: 攝氏轉華氏溫度</title>
+</head>
+<body>
+    <h2>攝氏轉華氏溫度</h2>
+    <p>請輸入攝氏溫度，將自動轉換成華氏溫度。</p>
+    <script>
+        // 定義一個函式用於將攝氏溫度轉換為華氏溫度
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32; // 計算公式
+        }
+
+        // 提示使用者輸入攝氏溫度
+        let celsius = prompt("請輸入攝氏溫度", "");
+        if (celsius !== null && celsius !== "") { // 確保輸入有效
+            let fahrenheit = celsiusToFahrenheit(parseFloat(celsius)); // 呼叫函式並轉換
+            alert(`攝氏 ${celsius} 度等於華氏 ${fahrenheit.toFixed(2)} 度`); // 顯示結果
+        } else {
+            alert("未輸入有效的攝氏溫度！"); // 提示輸入無效
+        }
+    </script>
+</body>
+</html>
